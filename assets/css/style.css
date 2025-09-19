@@ -1,0 +1,9 @@
+:root { --maxw: 980px; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; }
+.site-header, .site-footer { background: #111; color: #fff; padding: 1rem; }
+.site-header nav a { color: #fff; margin-right: 1rem; text-decoration: none; }
+main { max-width: var(--maxw); margin: 0 auto; padding: 1.25rem; }
+h1, h2 { margin: 0.5rem 0 0.75rem; }
+section { padding: 1rem 0; border-bottom: 1px solid #eee; }
+ul { padding-left: 1.1rem; }
