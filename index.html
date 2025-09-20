@@ -14,649 +14,8 @@
     <!-- Font: Space Grotesk -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        /* ===== BASE STYLES ===== */
-        html, body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Inter, sans-serif;
-            font-size: 16px;
-            background-color: #000000;
-            color: #000000;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ===== MAIN CONTAINER ===== */
-        .main-container {
-            min-height: 100vh;
-            width: 1200px;
-            margin: 0 auto;
-            background-color: #000000;
-        }
-
-        /* ===== HEADER SECTION ===== */
-        .header-section {
-            background-color: #000000;
-            padding: 60px 40px;
-            display: flex;
-            gap: 70px;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        /* ===== PROFILE SIDEBAR ===== */
-        .profile-sidebar {
-            width: 360px;
-            position: sticky;
-            top: 60px;
-            height: fit-content;
-        }
-
-        .profile-card {
-            background-color: #101010;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .profile-image-container {
-            aspect-ratio: 1;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-content {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            align-items: center;
-        }
-
-        .available-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 10px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: #ffffff;
-        }
-
-        .profile-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: #ffffff;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 10px;
-            text-decoration: none;
-        }
-
-        .social-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 7px;
-            height: 42px;
-        }
-
-        .download-btn, .contact-btn {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            padding: 0 20px;
-            border-radius: 8px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .download-btn {
-            background-color: #1f1f1f;
-            color: #bfbfbf;
-        }
-
-        .contact-btn {
-            background-color: #28e98c;
-            color: #000000;
-        }
-
-        /* ===== MAIN CONTENT ===== */
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 80px;
-        }
-
-        /* ===== ABOUT SECTION ===== */
-        .about-section {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            padding-top: 80px;
-        }
-
-        .greeting-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 500;
-            color: #999999;
-        }
-
-        .intro-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .intro-heading {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 52px;
-            font-weight: 500;
-            color: #ffffff;
-            line-height: 1.2em;
-            margin: 0;
-        }
-
-        .job-title-animated {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 52px;
-            font-weight: 500;
-            color: #28e98c;
-            line-height: 1.2em;
-        }
-
-        .description-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: #ffffff;
-            line-height: 1.6em;
-        }
-
-        /* Stats */
-        .stats-container {
-            display: flex;
-            gap: 40px;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 30px;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .stat-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: #999999;
-        }
-
-        /* ===== SECTION STYLES ===== */
-        .section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 500;
-            color: #ffffff;
-        }
-
-        /* ===== CARDS ===== */
-        .card {
-            background-color: #101010;
-            border: 1px solid #303030;
-            border-radius: 12px;
-            padding: 16px 24px;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .card-title-container {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex: 1;
-        }
-
-        .company-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .card-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .card-subtitle {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            color: #999999;
-        }
-
-        .date-badge {
-            padding: 6px 12px;
-            background-color: #191919;
-            border: 1px solid #303030;
-            border-radius: 4px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            color: #ffffff;
-            white-space: nowrap;
-        }
-
-        .divider {
-            height: 1px;
-            background-color: #303030;
-            margin: 10px 0;
-        }
-
-        .card-description {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: #999999;
-            line-height: 1.6em;
-        }
-
-        /* ===== PROJECT GRID ===== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            padding-bottom: 60px;
-        }
-
-        .project-card {
-            background-color: #101010;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 16px;
-        }
-
-        .project-image {
-            width: 100%;
-            aspect-ratio: 1.287;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .project-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-			gap: 2px;
-			height: min-content;
-        }
-
-        .project-info-info {
-            display: flex;
-            justify-content: space-between;
-			flex-direction: column;
-			gap: 2px;
-			height: min-content;
-        }
-
-        .project-info-button {
-			background-color: rgb(25, 25, 25);
-			border-radius: 50px;
-			opacity: 1;
-			padding: 10px;
-			border: 1px solid rgb(40, 40, 40);
-        }
-
-        .project-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 500;
-            color: #ffffff;
-			margin: 0px;
-        }
-
-        .project-meta {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .project-category {
-            font-size: 14px;
-            color: #999999;
-        }
-
-        .dot-separator {
-            width: 5px;
-            height: 5px;
-            background-color: #666666;
-            border-radius: 50%;
-        }
-
-        .project-pages {
-            font-size: 14px;
-            color: #999999;
-        }
-
-        /* ===== SKILLS GRID ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        .skill-card {
-            background-color: #101010;
-            border: 1px solid #272727;
-            border-radius: 12px;
-            padding: 13px 14px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .skill-icon {
-            width: 46px;
-            height: 46px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-
-        .skill-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .skill-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .skill-description {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            color: #999999;
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .contact-container {
-            display: flex;
-            gap: 30px;
-        }
-
-        .contact-details {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .contact-item {
-            background-color: #101010;
-            border-radius: 8px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        .contact-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-label {
-            font-size: 14px;
-            color: #999999;
-        }
-
-        .contact-value {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        /* ===== CONTACT FORM ===== */
-        .contact-form {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .form-input {
-            background-color: #101010;
-            border: 1px solid #303030;
-            border-radius: 6px;
-            padding: 12px;
-            font-family: Inter, sans-serif;
-            font-size: 16px;
-            color: #ffffff;
-            height: 40px;
-        }
-
-        .form-input::placeholder {
-            color: #666666;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #28e98c;
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            background-color: #28e98c;
-            color: #000000;
-            border: none;
-            border-radius: 10px;
-            padding: 10px 20px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            height: 40px;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background-color: #101010;
-            border-top: 1px solid #272727;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .footer-link {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            text-decoration: none;
-            color: #999999;
-            font-size: 14px;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .footer-text {
-            font-size: 14px;
-            color: #999999;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1199px) {
-            .main-container {
-                width: 810px;
-            }
-            
-            .header-section {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .profile-sidebar {
-                position: relative;
-                top: unset;
-                width: 100%;
-                max-width: 100%;
-            }
-            
-            .main-content {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 809px) {
-            .main-container {
-                width: 390px;
-            }
-            
-            .header-section {
-                flex-direction: column;
-                padding: 40px 20px;
-            }
-            
-            .projects-grid,
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .intro-heading,
-            .job-title-animated {
-                font-size: 30px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+	
 </head>
 <body>
     <div class="main-container">
@@ -671,35 +30,21 @@
                     
                     <div class="profile-content">
                         <div class="profile-info">
-                            <span class="available-badge">
-                                <span class="status-dot"></span>
-                                Available for work
-                            </span>
-                            
                             <h2 class="profile-name">Erik Guilfoyle</h2>
-                            
-                            <div class="social-links">
-                                <a href="https://instagram.com/" class="social-link" aria-label="Instagram" target="_blank">
-                                    <img src="https://framerusercontent.com/images/SUl7Vhv9jZEYooSixx6LxkLQHAg.png" alt="" class="social-icon">
-                                </a>
-                                <a href="https://x.com/" class="social-link" aria-label="Twitter" target="_blank">
-                                    <img src="https://framerusercontent.com/images/SUl7Vhv9jZEYooSixx6LxkLQHAg.png" alt="" class="social-icon">
-                                </a>
-                                <a href="https://youtube.com/" class="social-link" aria-label="YouTube" target="_blank">
-                                    <img src="https://framerusercontent.com/images/SUl7Vhv9jZEYooSixx6LxkLQHAg.png" alt="" class="social-icon">
-                                </a>
-                                <a href="https://dribbble.com/" class="social-link" aria-label="Dribbble" target="_blank">
-                                    <img src="https://framerusercontent.com/images/SUl7Vhv9jZEYooSixx6LxkLQHAg.png" alt="" class="social-icon">
-                                </a>
-                                <a href="https://behance.net/" class="social-link" aria-label="Behance" target="_blank">
-                                    <img src="https://framerusercontent.com/images/SUl7Vhv9jZEYooSixx6LxkLQHAg.png" alt="" class="social-icon">
-                                </a>
-                            </div>
                         </div>
                         
                         <div class="action-buttons">
-                            <a href="#" class="download-btn" download>
-                                Download CV
+                            <a href="index.html" class="other-btn">
+                                Home
+                            </a>
+                            <a href="#projects" class="other-btn">
+                                Projects
+                            </a>
+                            <a href="#skills" class="other-btn">
+                                Skills
+                            </a>
+                            <a href="#experience" class="other-btn">
+                                Experience
                             </a>
                             <a href="#contact" class="contact-btn">
                                 Contact Me
@@ -747,169 +92,99 @@
                     </div>
                 </section>
 
-                <!-- Experience Section -->
-                <section class="section">
-                    <div class="section-header">
-                        <img src="https://framerusercontent.com/images/jgg8XcpEvm1h5SzgaaSydSoklT0.png" alt="" class="section-icon">
-                        <h2 class="section-title">Experience</h2>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title-container">
-                                <img src="https://framerusercontent.com/images/j7YFrNAaVPV1PzLOkLSRI1v2YHo.png" alt="" class="company-icon">
-                                <div class="card-content">
-                                    <h3 class="card-title">Framer & UI/UX Designer</h3>
-                                    <p class="card-subtitle">Circlum Tech</p>
-                                </div>
-                            </div>
-                            <span class="date-badge">2023 - Present</span>
-                        </div>
-                        <div class="divider"></div>
-                        <p class="card-description">
-                            Designing interactive prototypes with Framer, focusing on seamless user experiences and scalable solutions 
-                            through user feedback and collaboration.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title-container">
-                                <img src="https://framerusercontent.com/images/6pvZL164ccVOeXhlQXWWOAtnNqs.png" alt="" class="company-icon">
-                                <div class="card-content">
-                                    <h3 class="card-title">UI/UX Designer</h3>
-                                    <p class="card-subtitle">CoreOS</p>
-                                </div>
-                            </div>
-                            <span class="date-badge">2021 - 2023</span>
-                        </div>
-                        <div class="divider"></div>
-                        <p class="card-description">
-                            Created intuitive web and mobile designs, conducted user research, and collaborated with developers to ensure 
-                            consistent and functional design delivery.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title-container">
-                                <img src="https://framerusercontent.com/images/0PY3w2mY1T2FT4J0qlMOSHNURzg.png" alt="" class="company-icon">
-                                <div class="card-content">
-                                    <h3 class="card-title">Graphics Designer</h3>
-                                    <p class="card-subtitle">Pixel Square</p>
-                                </div>
-                            </div>
-                            <span class="date-badge">2020 - 2021</span>
-                        </div>
-                        <div class="divider"></div>
-                        <p class="card-description">
-                            Designed marketing assets, UI components, and brand visuals, enhancing digital campaigns and overall visual 
-                            identity through creative collaboration.
-                        </p>
-                    </div>
-                </section>
-
                 <!-- Projects Section -->
-                <section class="section">
+                <section id="projects" class="section">
                     <div class="section-header">
                         <img src="https://framerusercontent.com/images/Gl7ma9U9rLo5bNvUSEuGggiis.png" alt="" class="section-icon">
                         <h2 class="section-title">Projects</h2>
+						<div class="right"><a href="projects.html">See More Projects</a></div>
                     </div>
                     
                     <div class="projects-grid">
-                        <a href="https://hellobot.framer.website/" class="project-card" target="_blank">
-                            <img src="https://framerusercontent.com/images/QiB9VtGWCKVb4q9G0wjEKOTnZY.jpg" alt="HelloBot" class="project-image">
+                        <a href="https://www.encoresvs.org/" class="project-card" target="_blank">
+							<div class="video-wrapper">
+								<iframe src="https://www.youtube.com/embed/68VAEH2dgJI?si=J3ynskOtqgdiTRad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
                             <div class="project-info">
 								<div class="project-info-info">
-									<h3 class="project-title">HelloBot</h3>
+									<h3 class="project-title">Order Fulfillment</h3>
+									<span class="project-category">VR - 2025</span>
 									<div class="project-meta">
-										<span class="project-category">SaaS & Startup</span>
-										<span class="dot-separator"></span>
-										<span class="project-pages">8 Pages</span>
+										<span class="project-pages">A virtual reality program Encore developed that helps people understand how to fulfill an order at a grocery store. Virtual reality provides multi-modal immersion for visual, auditory, and kinetic learners. Contact us to start a discussion on how we can develop a VR training solution to help your organization.</span>
 									</div>
 								</div>
-								<div class="project-info-button">[R]</div>
                             </div>
                         </a>
-
-                        <a href="https://flexisoft.framer.website/" class="project-card" target="_blank">
-                            <img src="https://framerusercontent.com/images/8ekt9FV3VjRzNfN1gtm6OwOsw.png" alt="Flexisoft" class="project-image">
+						
+                        <a href="https://www.encoresvs.org/" class="project-card" target="_blank">
+							<div class="video-wrapper">
+								<iframe src="https://www.youtube.com/embed/GG03D2S8xRY?si=ZWVpm4HP09GVfyTb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
                             <div class="project-info">
-                                <h3 class="project-title">Flexisoft</h3>
-                                <div class="project-meta">
-                                    <span class="project-category">SaaS & Startup</span>
-                                    <span class="dot-separator"></span>
-                                    <span class="project-pages">6 Pages</span>
-                                </div>
+								<div class="project-info-info">
+									<h3 class="project-title">Counting Change</h3>
+									<span class="project-category">VR - 2024</span>
+									<div class="project-meta">
+										<span class="project-pages">A virtual reality program Encore developed that helps people understand how to count change for cash payments at a hardware store. Virtual reality provides multi-modal immersion for visual, auditory, and kinetic learners. Contact us to start a discussion on how we can develop a VR training solution to help your organization.</span>
+									</div>
+								</div>
                             </div>
                         </a>
-
-                        <a href="https://excludia.framer.website/" class="project-card" target="_blank">
-                            <img src="https://framerusercontent.com/images/4XP20ZfSyY8w6Rs08mQlUoU4k.jpg" alt="Excludia" class="project-image">
+						
+                        <a class="project-card" target="_blank">
                             <div class="project-info">
-                                <h3 class="project-title">Excludia</h3>
-                                <div class="project-meta">
-                                    <span class="project-category">Digital Agency</span>
-                                    <span class="dot-separator"></span>
-                                    <span class="project-pages">8 Pages</span>
-                                </div>
+								<div class="project-info-info">
+									<h3 class="project-title">Baby Motion Application</h3>
+									<span class="project-category">Mobile - 2025</span>
+									<div class="project-meta">
+										<span class="project-pages">An application to collection physical movement characteristics of a baby and determine any physical or mental disabilities as a result of such movement.</span>
+									</div>
+								</div>
                             </div>
                         </a>
-
-                        <a href="https://cryptorahub.framer.website/" class="project-card" target="_blank">
-                            <img src="https://framerusercontent.com/images/ebtImTtw42VcUnCivTjSv2qrNCE.png" alt="CryptoraHub" class="project-image">
+						
+                        <a class="project-card" target="_blank">
                             <div class="project-info">
-                                <h3 class="project-title">CryptoraHub</h3>
-                                <div class="project-meta">
-                                    <span class="project-category">Crypto & Web3</span>
-                                    <span class="dot-separator"></span>
-                                    <span class="project-pages">7 Pages</span>
-                                </div>
+								<div class="project-info-info">
+									<h3 class="project-title">Facial Scan Application</h3>
+									<span class="project-category">Mobile / PC - 2025</span>
+									<div class="project-meta">
+										<span class="project-pages">An application to collection physical movement characteristics of a face and determine any physical or mental disabilities as a result of such movement. A companion PC application was developed for administrative usage.</span>
+									</div>
+								</div>
                             </div>
                         </a>
-                    </div>
-                </section>
-
-                <!-- Education Section -->
-                <section class="section">
-                    <div class="section-header">
-                        <img src="https://framerusercontent.com/images/jru1FNjTOgRJAE9xfxzT3FmqT4.png" alt="" class="section-icon">
-                        <h2 class="section-title">Education</h2>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-content">
-                                <h3 class="card-title">UI/UX Design Certification</h3>
-                                <p class="card-subtitle">Interaction Design Foundation, Online</p>
+						
+                        <a href="https://store.steampowered.com/app/3101230/Montezumas_Revenge__The_40th_Anniversary_Edition/" class="project-card" target="_blank">
+                            <img src="assets/images/montezumasrev40th.jpg" alt="" class="project-image">
+                            <div class="project-info">
+								<div class="project-info-info">
+									<h3 class="project-title">Montezuma's Revenge 40th Anniversary</h3>
+									<span class="project-category">PC / Steam / Nintendo Switch - 2025</span>
+									<div class="project-meta">
+										<span class="project-pages">You read that right. This is an authorized edition of Montezuma’s Revenge, the 1980’s hit classic game now in 3D.</span>
+									</div>
+								</div>
                             </div>
-                            <span class="date-badge">2018 - 2019</span>
-                        </div>
-                        <div class="divider"></div>
-                        <p class="card-description">
-                            Gained hands-on experience in UX research, prototyping, wireframing, and usability testing, focusing on 
-                            designing seamless, user-friendly digital experiences.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-content">
-                                <h3 class="card-title">Bachelor of Design in Interaction Design</h3>
-                                <p class="card-subtitle">National University of Singapore, Singapore</p>
+                        </a>
+						
+                        <a href="https://www.clinicaltrials.gov/study/NCT02611362" class="project-card" target="_blank">
+                            <div class="project-info">
+								<div class="project-info-info">
+									<h3 class="project-title">Viral Combat</h3>
+									<span class="project-category">Mobile - 2024</span>
+									<div class="project-meta">
+										<span class="project-pages">This is a classic and it has been rebuilt using the latest Unity engine. Based on our original Dr Nano game from 2010, we completely rebuilt the models, environments and programming to release this version for a university study. The mobile health game Viral Combat was designed to improve adherence to HIV prevention medication (PrEP).</span>
+									</div>
+								</div>
                             </div>
-                            <span class="date-badge">2015 - 2017</span>
-                        </div>
-                        <div class="divider"></div>
-                        <p class="card-description">
-                            Completed a comprehensive program focused on designing user-centered digital products, integrating aesthetics 
-                            and functionality through practical interaction design principles.
-                        </p>
+                        </a>
+						
                     </div>
                 </section>
 
                 <!-- Skills Section -->
-                <section class="section">
+                <section id="skills" class="section">
                     <div class="section-header">
                         <img src="https://framerusercontent.com/images/nX3hZ6AEJvnIuXuqDICbhOZg0.png" alt="" class="section-icon">
                         <h2 class="section-title">Skills</h2>
@@ -919,49 +194,104 @@
                         <div class="skill-card">
                             <img src="https://framerusercontent.com/images/4b2fpNvYCvhYBqwp9rPVlJorlNk.png" alt="Figma" class="skill-icon">
                             <div class="skill-info">
-                                <h3 class="skill-name">Figma</h3>
-                                <p class="skill-description">Design Tool</p>
+                                <h3 class="skill-name">Game Engines & Platforms</h3>
+                                <p class="skill-description">Unity (1.6 → current): PC, Mac, Browser, WebGL, WebAssembly, iOS, Android, Nintendo Switch, Wii, Oculus/Meta, VR/AR</p>
+                                <p class="skill-description">Unreal Engine (3 → current): PC, Mac, Blueprints</p>
                             </div>
                         </div>
 
                         <div class="skill-card">
                             <img src="https://framerusercontent.com/images/sL2KEMjxFoYOJ2JvhSZOnijW984.png" alt="Framer" class="skill-icon">
                             <div class="skill-info">
-                                <h3 class="skill-name">Framer</h3>
-                                <p class="skill-description">No Code Development</p>
+                                <h3 class="skill-name">Programming & Development</h3>
+                                <p class="skill-description">C#, C++, JavaScript, PHP, Java</p>
+                                <p class="skill-description">Visual Studio, Android Studio</p>
                             </div>
                         </div>
 
                         <div class="skill-card">
                             <img src="https://framerusercontent.com/images/RP5D3z5BMdzfFDzDNh9ZmPBqbU.png" alt="Lemon Squeezy" class="skill-icon">
                             <div class="skill-info">
-                                <h3 class="skill-name">Lemon Squeezy</h3>
-                                <p class="skill-description">Payment</p>
+                                <h3 class="skill-name">Web Development</h3>
+                                <p class="skill-description">LAMP & MERN stacks</p>
+                                <p class="skill-description">HTML5, CSS, Ajax, jQuery</p>
+                                <p class="skill-description">MySQL, MongoDB, MariaDB, SQLite</p>
                             </div>
                         </div>
 
                         <div class="skill-card">
                             <img src="https://framerusercontent.com/images/zy8gPU1X9WIeJWncD33qyI8Hq4.png" alt="Notion" class="skill-icon">
                             <div class="skill-info">
-                                <h3 class="skill-name">Notion</h3>
-                                <p class="skill-description">Productivity</p>
+                                <h3 class="skill-name">Server & Cloud Administration</h3>
+                                <p class="skill-description">Apache, Linux, AWS</p>
+                                <p class="skill-description">WHM, cPanel, Telnet, IoT</p>
                             </div>
                         </div>
 
                         <div class="skill-card">
                             <img src="https://framerusercontent.com/images/jmiwP3mzhUgb1nHpItcpNXnGgw.png" alt="Illustrator" class="skill-icon">
                             <div class="skill-info">
-                                <h3 class="skill-name">Illustrator</h3>
-                                <p class="skill-description">Graphics</p>
+                                <h3 class="skill-name">Tools & Pipelines</h3>
+                                <p class="skill-description">Perforce, Git, Sonar</p>
+                                <p class="skill-description">Radiant, Photoshop</p>
                             </div>
                         </div>
 
                         <div class="skill-card">
                             <img src="https://framerusercontent.com/images/hTq8D9NdbIha8Pa9NNi25ZYoiGI.png" alt="SS Icons" class="skill-icon">
                             <div class="skill-info">
-                                <h3 class="skill-name">SS Icons</h3>
-                                <p class="skill-description">Icon Library</p>
+                                <h3 class="skill-name">XR / Emerging Technologies</h3>
+                                <p class="skill-description">VR/AR development</p>
+                                <p class="skill-description">Oculus / Meta ecosystem</p>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience" class="section">
+                    <div class="section-header">
+                        <img src="https://framerusercontent.com/images/jgg8XcpEvm1h5SzgaaSydSoklT0.png" alt="" class="section-icon">
+                        <h2 class="section-title">Experience</h2>
+						<div class="right"><a href="experience.html">See More Experience</a></div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title-container">
+                                <img src="https://framerusercontent.com/images/j7YFrNAaVPV1PzLOkLSRI1v2YHo.png" alt="" class="company-icon">
+                                <div class="card-content">
+                                    <h3 class="card-title">Mission Critical Studios LLC</h3>
+                                    <p class="card-subtitle">Lead Programmer / VP</p>
+                                </div>
+                            </div>
+                            <span class="date-badge">2008 - Present</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title-container">
+                                <img src="https://framerusercontent.com/images/6pvZL164ccVOeXhlQXWWOAtnNqs.png" alt="" class="company-icon">
+                                <div class="card-content">
+                                    <h3 class="card-title">Tres Media Group Inc</h3>
+                                    <p class="card-subtitle">Vice President and Partner</p>
+                                </div>
+                            </div>
+                            <span class="date-badge">1998 - Present</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title-container">
+                                <img src="https://framerusercontent.com/images/0PY3w2mY1T2FT4J0qlMOSHNURzg.png" alt="" class="company-icon">
+                                <div class="card-content">
+                                    <h3 class="card-title">Silas Solutions LLC</h3>
+                                    <p class="card-subtitle">Senior Developer, Lead Developer/Programmer</p>
+                                </div>
+                            </div>
+                            <span class="date-badge">2017 - Present</span>
                         </div>
                     </div>
                 </section>
@@ -1001,24 +331,9 @@
                                 </div>
                             </div>
                         </div>
-
-                        <form class="contact-form">
-                            <div class="form-group">
-                                <input type="text" name="fullName" placeholder="Full Name" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Phone Number" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Message" class="form-input form-textarea"></textarea>
-                            </div>
-                            <button type="submit" class="submit-button">Send Message</button>
-                        </form>
                     </div>
                 </section>
+				
             </main>
         </header>
 
