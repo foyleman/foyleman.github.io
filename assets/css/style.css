@@ -426,7 +426,6 @@ section#experience .card-subtitle {
 	border-radius: 12px;
 	padding: 13px 14px;
 	display: flex;
-	align-items: center;
 	gap: 12px;
 }
 
@@ -435,6 +434,7 @@ section#experience .card-subtitle {
 	height: 46px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 8px;
+	margin-top: 12px;
 }
 
 .skill-info {
